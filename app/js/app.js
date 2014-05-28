@@ -34,11 +34,16 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/page-infrastructure', {templateUrl: 'partials/page-infrastructure.html', controller: 'MyCtrl_page_infrastructure'});
   $routeProvider.when('/page-todo', {templateUrl: 'partials/page-todo.html', controller: 'MyCtrl_page_todo'});
   $routeProvider.when('/table', {templateUrl: 'partials/table.html', controller: 'MyCtrl_table'});
-  $routeProvider.when('/typography', {templateUrl: 'partials/typography.html', controller: 'MyCtrltypography'});
+  $routeProvider.when('/typography', {templateUrl: 'partials/typography.html', controller: 'MyCtrl_typography'});
   $routeProvider.when('/widgets', {templateUrl: 'partials/widgets.html', controller: 'MyCtrl_widgets'});
   $routeProvider.when('/n3-charts', {templateUrl: 'partials/n3-charts.html', controller: 'MyCtrl_n3_charts'});
   $routeProvider.otherwise({redirectTo: '/dashboard'});
 }])
 .run(['$rootScope', function($rootScope) {
   console.log("myApp run.....");
+  $rootScope.viewUIFeatures = false;
+  $rootScope.viewIcons = false;
+  $rootScope.viewCharts = false;
+  $rootScope.viewForms = false;
+  $rootScope.viewExamplePages = false;
 }]);
